@@ -1,0 +1,33 @@
+name: Clean (Workflow Logs)
+
+on:
+  schedule:
+    - cron: '0 19 * * 0' # Sunday 7pm UTC -> Monday 6am (Australian Eastern Daylight Time)
+  workflow_dispatch:
+    inputs:
+      days_old:
+        description: 'The amount of days old to delete the logs'
+        default: '14'
+        required: false
+
+permissions:
+  actions: write
+  contents: write
+  packages: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  TZ: 'Australia/Sydney'
+  LANG: 'en_AU.UTF-8'
+  SCHEDULED_DAYS_OLD: '14'
+
+jobs:
+  delete-old-workflows-logs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: igorjs/gh-actions-clean-workflow@v3.0.1
+        with:
+          days_old: ${{ github.event.inputs.days_old || env.SCHEDULED_DAYS_OLD }}

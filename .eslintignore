@@ -1,0 +1,9 @@
+*.log
+*.d.ts
+*.ts.map
+*.config.ts
+lib/
+dist/
+tests/
+coverage/
+node_modules/

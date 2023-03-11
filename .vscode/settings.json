@@ -1,0 +1,27 @@
+{
+  "files.exclude": {
+    "**/.husky": false
+  },
+  "editor.rulers": [80],
+  "editor.autoIndent": "none",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+  "eslint.runtime": "node",
+  "eslint.execArgv": ["--max_old_space_size=8192"],
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.codeActionsOnSave.mode": "problems",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

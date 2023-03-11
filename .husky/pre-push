@@ -1,0 +1,8 @@
+#!/bin/bash
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running pre-push hook..."
+
+npm run codestyle
+npm run typecheck
+npm run test:ci

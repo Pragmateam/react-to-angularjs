@@ -13,13 +13,13 @@ example/build
 example/node_modules
 
 # production
-**/lib
-**/dist
-**/build
-**/dist-ssr
+packages/**/lib
+packages/**/dist
+packages/**/build
+packages/**/dist-ssr
+server/dist
+public/dist
 storybook-static
-**/snapshots/diff_output/
-**/snapshots/received_output/
 
 # misc
 .DS_Store
@@ -57,4 +57,3 @@ bundle-stats.json
 .npmrc
 .yarnrc
 .yarnrc.yml
-.yarnrc.yaml

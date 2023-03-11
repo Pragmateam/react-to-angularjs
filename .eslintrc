@@ -1,0 +1,83 @@
+{
+  "root": true,
+
+  "parser": "@typescript-eslint/parser",
+
+  "ignorePatterns": [
+    "node_modules/",
+    "coverage/",
+    "tests/",
+    "dist/",
+    "lib/",
+    "**/*.d.ts",
+    "**/*.map",
+    "**/*.config.ts"
+  ],
+
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:jest/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:import/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended"
+  ],
+
+  "plugins": ["@typescript-eslint"],
+
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {}
+    }
+  },
+
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "@typescript-eslint/no-namespace": [
+      "error",
+      {
+        "allowDefinitionFiles": true,
+        "allowDeclarations": true
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "indent": "off",
+    "semi": ["error", "always"],
+    "no-tabs": ["error", { "allowIndentationTabs": true }],
+    "no-unused-vars": "off",
+    "linebreak-style": ["error", "unix"]
+  }
+}
